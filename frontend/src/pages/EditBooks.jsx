@@ -5,6 +5,8 @@ import Spinner from '../components/Spinner'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 
+import { useSnackbar } from 'notistack'
+
 const EditBooks = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -12,6 +14,8 @@ const EditBooks = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     setLoading(true);
@@ -40,11 +44,13 @@ const EditBooks = () => {
       .then(() => {
         setLoading(false);
         navigate('/');
+        enqueueSnackbar('Successfully edited book', { variant : 'success' });
       })
       .catch((error) => {
         setLoading(false);
         alert('An error occured. Please check the console');
         console.log(error);
+        enqueueSnackbar('Error occured. Please check the console', { variant : 'error' });
       });
   };
 
