@@ -6,16 +6,9 @@ Welcome to the Bookstore Web App, a full-stack application to manage and showcas
 
 ## Front-End
 
-### Code Structure
+### Technology Overview
 
 The front-end of the Bookstore Web App is built using React. The main entry point for the React application. It defines the routes using `react-router-dom` to navigate between different pages. Responsible for rendering the `App` component, providing routing capabilities and utilizing `SnackbarProvider` for displaying notifications.
-
-### Getting Started
-
-To run the front-end locally:
-
-1. Install dependencies: `npm install`
-2. Start the development server: `npm start`
 
 ## Back-End
 
